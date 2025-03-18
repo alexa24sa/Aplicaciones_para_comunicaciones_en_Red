@@ -1,8 +1,7 @@
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  * Cliente estilo OneDrive/FTP que se conecta al ServerOneDrive.
@@ -23,6 +22,13 @@ public class ClientOneDrive {
     private static final String CLIENT_BASE_DIR = "carpeta_local";
 
     public static void main(String[] args) {
+        // Inicializar el contexto gráfico de Swing
+        SwingUtilities.invokeLater(() -> {
+            // Crear una ventana invisible para inicializar el contexto gráfico
+            JFrame frame = new JFrame();
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(false); // No mostrar la ventana
+        });
         // Crear la carpeta local si no existe
         File localDir = new File(CLIENT_BASE_DIR);
         if (!localDir.exists()) {
@@ -53,21 +59,21 @@ public class ClientOneDrive {
                 dos.flush();
 
                 if (command.equals("PUT")) {
-                    // El usuario quiere subir un archivo
-                    // 1) Abrimos un JFileChooser para seleccionar el archivo local a subir
-                    JFileChooser jf = new JFileChooser();
-                    int r = jf.showOpenDialog(null);
-                    if (r != JFileChooser.APPROVE_OPTION) {
-                        System.out.println("[Cliente] Subida cancelada. No se seleccionó archivo.");
-                        // Podríamos enviar un comando extra de "CANCEL" al servidor, pero en este ejemplo lo omitimos.
-                        // Simplemente leemos la respuesta inmediata del servidor (que quedará "desfasada").
-                        // Este ejemplo asume que las cosas están bien si no subimos nada.
-                        // En un proyecto real, habría que manejar este caso con mayor cuidado.
-                        String skipResp = dis.readUTF(); 
-                        System.out.println("[Servidor] " + skipResp);
-                        continue;
-                    }
-                    File fileToSend = jf.getSelectedFile();
+//                    // El usuario quiere subir un archivo
+//                    // 1) Abrimos un JFileChooser para seleccionar el archivo local a subir
+//                    JFileChooser jf = new JFileChooser();
+//                    int r = jf.showOpenDialog(null);
+//                    if (r != JFileChooser.APPROVE_OPTION) {
+//                        System.out.println("[Cliente] Subida cancelada. No se seleccionó archivo.");
+//                        // Podríamos enviar un comando extra de "CANCEL" al servidor, pero en este ejemplo lo omitimos.
+//                        // Simplemente leemos la respuesta inmediata del servidor (que quedará "desfasada").
+//                        // Este ejemplo asume que las cosas están bien si no subimos nada.
+//                        // En un proyecto real, habría que manejar este caso con mayor cuidado.
+//                        String skipResp = dis.readUTF();
+//                        System.out.println("[Servidor] " + skipResp);
+//                        continue;
+//                    }
+                    File fileToSend = new File(CLIENT_BASE_DIR + "/" + parts[1]); // jf.getSelectedFile();
 
                     // 2) Leemos la respuesta del servidor para PUT (normalmente "PORT <puerto>")
                     String serverResp = dis.readUTF();
