@@ -13,7 +13,6 @@ public class DropBox extends JFrame implements ActionListener {
     static DefaultListModel<String> modelo;
     MouseListener mouseListener;
     JPanel panelBotones;
-    static JProgressBar BarraProgreso;
     JScrollPane scroll;
     //File list[];
 
@@ -55,11 +54,6 @@ public class DropBox extends JFrame implements ActionListener {
 
         panelBotones = new JPanel();
         panelBotones.setLayout(new BoxLayout(panelBotones, BoxLayout.X_AXIS));
-
-        BarraProgreso = new JProgressBar(0, 100);
-        BarraProgreso.setAlignmentX(Component.CENTER_ALIGNMENT);
-        BarraProgreso.setStringPainted(true);
-        c.add(BarraProgreso);
 
         BtnSubir = new JButton("Subir Archivo");
         BtnActualizar = new JButton("Actualizar - Inicio");
