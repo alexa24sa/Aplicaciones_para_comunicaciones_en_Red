@@ -1,0 +1,88 @@
+{
+    "Login": {
+        "function": [
+            "Face ID",
+            "Contraseña",
+            "Huella digital"
+        ],
+        "errorCode": [
+            "99']",
+            "['0"
+        ],
+        "errorMessage": [
+            "Éxito",
+            "Error de conectividad / aplicación"
+        ],
+        "errorType": [
+            "System error",
+            "Business rule"
+        ],
+        "userGroupId": [
+            "Número de Cliente"
+        ],
+        "startTimestamp": [
+            "1650672219"
+        ],
+        "endTimeStamp": [
+            "1650672219"
+        ],
+        "userProfile": [
+            "Full",
+            "Básico",
+            "Lite"
+        ],
+        "user": [
+            "PM",
+            "PF",
+            "PFAE"
+        ],
+        "appVersion": [
+            "13.0.0']",
+            "['12.30.2",
+            "12.29.0"
+        ]
+    },
+    "RecoverUser": {
+        "function": [
+            "No. Cliente",
+            "TDD",
+            "No. Cuenta"
+        ],
+        "errorCode": [
+            "99']",
+            "['0"
+        ],
+        "errorMessage": [
+            "Éxito",
+            "Error de conectividad / aplicación"
+        ],
+        "errorType": [
+            "System error",
+            "Business rule"
+        ],
+        "userGroupId": [
+            "Número de Cliente"
+        ],
+        "startTimestamp": [
+            "1650672219"
+        ],
+        "endTimeStamp": [
+            "1650672219"
+        ],
+        "userProfile": [
+            "Full",
+            "Básico",
+            "Lite"
+        ],
+        "user": [
+            "PM",
+            "PF",
+            "PFAE"
+        ],
+        "appVersion": [
+            "13.0.0']",
+            "['12.30.2",
+            "12.29.0"
+        ]
+    }
+}
